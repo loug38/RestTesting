@@ -38,7 +38,7 @@ class RestTesting extends Component {
         try{
             let reponse = await fetch('http://requestb.in/1n94tai1');
             let responseJson = await response.json();
-            return reposeJson;
+            return responseJson;
         } catch (error) {
             console.error(error);
         }
