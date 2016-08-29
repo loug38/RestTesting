@@ -289,3 +289,133 @@ Total time: 52.983 secs
 13:54:42.952 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 214: stopping connection
 13:54:42.953 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
 13:54:42.954 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 214: stopping connection
+15:16:03.574 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:35422 to /127.0.0.1:54216.
+15:16:03.596 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 412: received class org.gradle.launcher.daemon.protocol.Build
+15:16:03.596 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=505dcd68-1e23-4e5b-bb78-02c80b910d42.1, currentDir=/home/lgeorge/React-Native/RestTesting/android}
+15:16:03.596 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=505dcd68-1e23-4e5b-bb78-02c80b910d42.1, currentDir=/home/lgeorge/React-Native/RestTesting/android}.
+15:16:03.596 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=505dcd68-1e23-4e5b-bb78-02c80b910d42.1, currentDir=/home/lgeorge/React-Native/RestTesting/android} with connection: socket connection from /127.0.0.1:54216 to /127.0.0.1:35422.
+15:16:03.597 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=505dcd68-1e23-4e5b-bb78-02c80b910d42.1, currentDir=/home/lgeorge/React-Native/RestTesting/android}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@295cf7c] after 81.0 minutes of idle
+15:16:03.597 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [e70ddb79-8284-4d07-bd8f-f31126771427 port:54216, addresses:[/0:0:0:0:0:0:0:1%1, /127.0.0.1]]
+15:16:03.597 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [e70ddb79-8284-4d07-bd8f-f31126771427 port:54216, addresses:[/0:0:0:0:0:0:0:1%1, /127.0.0.1]]
+15:16:03.597 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:16:03.598 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:16:03.600 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:16:03.601 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1472508963601
+15:16:03.602 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:16:03.602 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=505dcd68-1e23-4e5b-bb78-02c80b910d42.1, currentDir=/home/lgeorge/React-Native/RestTesting/android}. Dispatching build started information...
+15:16:03.602 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 414: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+15:16:03.604 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {MDMSESSION=cinnamon, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-BajABW, SSH_AGENT_PID=2568, SHLVL=1, NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript, TEXTDOMAINDIR=/usr/share/locale/, GDM_XSERVER_LOCATION=local, SESSION_MANAGER=local/dev-lou.datacareservices.com:@/tmp/.ICE-unix/2405,unix/dev-lou.datacareservices.com:/tmp/.ICE-unix/2405, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, XDG_SESSION_COOKIE=e208722c880643bd0a5f93a7577cffbd-1472491785.125321-1041906795, GDMSESSION=cinnamon, MANDATORY_PATH=/usr/share/gconf/cinnamon.mandatory.path, XDG_DATA_DIRS=/usr/share/cinnamon:/usr/share/gnome:/usr/local/share/:/usr/share/:/usr/share/mdm/, PWD=/home/lgeorge/Desktop, INSIDE_NEMO_PYTHON=, MDM_XSERVER_LOCATION=local, LOGNAME=lgeorge, GPG_AGENT_INFO=/run/user/1000/keyring-BajABW/gpg:0:1, _=/usr/lib/jvm/java-7-openjdk-amd64/bin/java, SSH_AUTH_SOCK=/run/user/1000/keyring-BajABW/ssh, LD_LIBRARY_PATH=/home/lgeorge/android-studio/bin:, TEXTDOMAIN=im-config, SHELL=/usr/bin/zsh, CLUTTER_BACKEND=x11, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ngmVcHuw2C,guid=177a0394cfcee392847a0f8b57c4710d, GNOME_KEYRING_PID=2329, XDG_CONFIG_DIRS=/etc/xdg/xdg-cinnamon:/etc/xdg, PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games, XDG_CURRENT_DESKTOP=X-Cinnamon, DESKTOP_SESSION=cinnamon, DISPLAY=:0.0, USER=lgeorge, HOME=/home/lgeorge, XAUTHORITY=/home/lgeorge/.Xauthority, XDG_SEAT=seat0, WINDOWPATH=8, XDG_SESSION_ID=c1, DEFAULTS_PATH=/usr/share/gconf/cinnamon.default.path, QT_STYLE_OVERRIDE=gtk, USERNAME=lgeorge, MDM_LANG=en_US.UTF-8, XDG_VTNR=8, XDG_SESSION_DESKTOP=cinnamon, XDG_RUNTIME_DIR=/run/user/1000, LANG=en_US.UTF-8}
+15:16:03.605 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+15:16:03.606 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10269). The daemon log file: /home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/daemon/2.4/daemon-10269.out.log
+15:16:03.606 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 3rd build in daemon [uptime: 1 hrs 27 mins 33.167 secs, performance: 100%, memory: 46% of 954.7 MB]
+15:16:03.607 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+15:16:03.607 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=47d07a3b-f2bb-44a0-b884-0c8e9703fde7,javaHome=/usr/lib/jvm/java-7-openjdk-amd64,daemonRegistryDir=/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/daemon,pid=10269,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:clean
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72301Library
+:app:prepareComAndroidSupportRecyclerviewV72301Library
+:app:prepareComAndroidSupportSupportV42321Library
+:app:prepareComFacebookFrescoDrawee0110Library
+:app:prepareComFacebookFrescoFbcore0110Library
+:app:prepareComFacebookFrescoFresco0110Library
+:app:prepareComFacebookFrescoImagepipeline0110Library
+:app:prepareComFacebookFrescoImagepipelineBase0110Library
+:app:prepareComFacebookFrescoImagepipelineOkhttp30110Library
+:app:prepareComFacebookReactReactNative0320Library
+:app:prepareComFacebookSoloaderSoloader010Library
+:app:prepareOrgWebkitAndroidJscR174650Library
+:app:prepareDebugDependencies
+:app:compileDebugAidl
+:app:compileDebugRenderscript
+:app:generateDebugBuildConfig
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets
+:app:generateDebugResValues UP-TO-DATE
+:app:generateDebugResources
+:app:mergeDebugResources
+:app:processDebugManifest
+:app:processDebugResources
+:app:generateDebugSources
+:app:preDebugUnitTestBuild UP-TO-DATE
+:app:prepareDebugUnitTestDependencies
+:app:mockableAndroidJar
+:app:preDebugAndroidTestBuild UP-TO-DATE
+:app:prepareDebugAndroidTestDependencies
+:app:compileDebugAndroidTestAidl
+:app:processDebugAndroidTestManifest
+:app:compileDebugAndroidTestRenderscript
+:app:generateDebugAndroidTestBuildConfig
+:app:generateDebugAndroidTestAssets UP-TO-DATE
+:app:mergeDebugAndroidTestAssets
+:app:generateDebugAndroidTestResValues UP-TO-DATE
+:app:generateDebugAndroidTestResources
+:app:mergeDebugAndroidTestResources
+:app:processDebugAndroidTestResources
+:app:generateDebugAndroidTestSources
+:app:processDebugJavaRes UP-TO-DATE
+:app:compileDebugJavaWithJavac
+:app:compileDebugNdk UP-TO-DATE
+:app:compileDebugSources
+:app:preDexDebug
+:app:dexDebug
+:app:validateDebugSigning
+:app:packageDebug
+:app:zipalignDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL
+
+Total time: 47.301 secs
+15:16:50.851 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/jars-1) was closed 0 times.
+15:16:50.852 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on initscript class cache for initialization script '/tmp/asLocalRepo4.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/asLocalRepo4_emjnrgknnreb8wqdkfby3sz5m/InitScript/initscript).
+15:16:50.852 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on no_initscript class cache for initialization script '/tmp/asLocalRepo4.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/asLocalRepo4_emjnrgknnreb8wqdkfby3sz5m/InitScript/no_initscript).
+15:16:50.852 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on buildscript class cache for settings file '/home/lgeorge/React-Native/RestTesting/android/settings.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/settings_d3kfkurqgy2k89akrwzda3he4/SettingsScript/buildscript).
+15:16:50.852 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on no_buildscript class cache for settings file '/home/lgeorge/React-Native/RestTesting/android/settings.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/settings_d3kfkurqgy2k89akrwzda3he4/SettingsScript/no_buildscript).
+15:16:50.852 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on buildscript class cache for build file '/home/lgeorge/React-Native/RestTesting/android/build.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/build_5ii6jly7mefuw8p30mrxjw8lt/ProjectScript/buildscript).
+15:16:50.853 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on no_buildscript class cache for build file '/home/lgeorge/React-Native/RestTesting/android/build.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/build_5ii6jly7mefuw8p30mrxjw8lt/ProjectScript/no_buildscript).
+15:16:50.853 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on buildscript class cache for build file '/home/lgeorge/React-Native/RestTesting/android/app/build.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/build_ell6dd6mqsd3rsvur71h4sbjt/ProjectScript/buildscript).
+15:16:50.853 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on no_buildscript class cache for build file '/home/lgeorge/React-Native/RestTesting/android/app/build.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/build_ell6dd6mqsd3rsvur71h4sbjt/ProjectScript/no_buildscript).
+15:16:50.853 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on buildscript class cache for script '/home/lgeorge/React-Native/RestTesting/node_modules/react-native/react.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/react_anpizw8gp5f11xzuq5ifizy8j/DefaultScript/buildscript).
+15:16:50.853 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on no_buildscript class cache for script '/home/lgeorge/React-Native/RestTesting/node_modules/react-native/react.gradle' (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/scripts/react_anpizw8gp5f11xzuq5ifizy8j/DefaultScript/no_buildscript).
+15:16:50.854 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/modules-2/metadata-2.15/module-artifacts.bin)
+15:16:50.854 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/modules-2/metadata-2.15/artifact-at-repository.bin)
+15:16:50.854 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/modules-2/metadata-2.15/module-metadata.bin)
+15:16:50.854 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-versions.bin (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/modules-2/metadata-2.15/module-versions.bin)
+15:16:50.854 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/modules-2).
+15:16:50.855 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/lgeorge/React-Native/RestTesting/android/gradle/wrapper/caches/2.4/plugin-resolution) was closed 0 times.
+15:16:50.855 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+15:16:50.855 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+15:16:50.856 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/lgeorge/React-Native/RestTesting/android/.gradle/2.4/taskArtifacts/fileHashes.bin)
+15:16:50.856 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/lgeorge/React-Native/RestTesting/android/.gradle/2.4/taskArtifacts/taskArtifacts.bin)
+15:16:50.856 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/lgeorge/React-Native/RestTesting/android/.gradle/2.4/taskArtifacts/outputFileStates.bin)
+15:16:50.856 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/lgeorge/React-Native/RestTesting/android/.gradle/2.4/taskArtifacts/fileSnapshots.bin)
+15:16:50.856 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/lgeorge/React-Native/RestTesting/android/.gradle/2.4/taskArtifacts).
+15:16:50.857 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 4 (avg: 0.001 secs, total: 0.004 secs)
+15:16:50.857 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+15:16:50.857 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.0 secs
+15:16:50.857 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 6, modules served from cache: 258, artifacts: 39
+15:16:50.857 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+15:16:51.025 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:16:51.025 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=505dcd68-1e23-4e5b-bb78-02c80b910d42.1, currentDir=/home/lgeorge/React-Native/RestTesting/android}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@295cf7c]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@77d26806 with state Running
+15:16:51.026 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=505dcd68-1e23-4e5b-bb78-02c80b910d42.1, currentDir=/home/lgeorge/React-Native/RestTesting/android}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@295cf7c]
+15:16:51.026 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1472509011026
+15:16:51.026 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [e70ddb79-8284-4d07-bd8f-f31126771427 port:54216, addresses:[/0:0:0:0:0:0:0:1%1, /127.0.0.1]]
+15:16:51.026 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [e70ddb79-8284-4d07-bd8f-f31126771427 port:54216, addresses:[/0:0:0:0:0:0:0:1%1, /127.0.0.1]]
+15:16:51.026 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:16:51.027 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:16:51.031 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:16:51.032 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.tooling.internal.provider.BuildActionResult@4704d42c]
+15:16:51.032 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 411: dispatching class org.gradle.launcher.daemon.protocol.Success
+15:16:51.032 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Mon Aug 29 18:16:51 PDT 2016
+15:16:51.034 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=505dcd68-1e23-4e5b-bb78-02c80b910d42.1, currentDir=/home/lgeorge/React-Native/RestTesting/android}
+15:16:51.036 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 412: received class org.gradle.launcher.daemon.protocol.Finished
+15:16:51.036 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@4e52d9dc
+15:16:51.036 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@4e52d9dc
+15:16:51.036 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 412: received null
+15:16:51.036 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+15:16:51.036 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 411: stopping connection
+15:16:51.037 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 411: stopping connection

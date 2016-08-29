@@ -1,30 +1,27 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Fetch, TouchableOpacity } from 'react-native';
 
 class RestTesting extends Component {
 
-  	render() {
-    	return (
-      		<View style={styles.container}>
+  	render(){
+  		return(
+			<View style={styles.container}>
       			<Text style={styles.description}>
-      				Try to make a REST request by pressing the button
+      				Try GET or POST from/to RequestBin
       			</Text>
-      			<TouchableOpacity onPress={(event) => this._onPressButtonRESULT()}>
-        			<Text style={styles.button}>
-        				Press this.
-        			</Text>
-        		</TouchableOpacity>
-      		</View>
+      			<View style={styles.buttons}>
+	      			<TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonPOST()}>
+	        			<Text> Post </Text>
+	        		</TouchableOpacity>
+	        		<TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonGET()}>
+	        			<Text> Get </Text>
+	        		</TouchableOpacity>
+        		</View>
+      		</View>		
     	);
   	}
 
-    _onPressButtonGET(){
+    _onPressButtonPOST(){
         fetch('http://requestb.in/1n94tai1', {
             method: 'POST',
             headers: {
@@ -38,7 +35,7 @@ class RestTesting extends Component {
         });
     }
 
-    async _onPressButtonRESULT(){
+    async _onPressButtonGET(){
     	try{
     		let reponse = await fetch('http://requestb.in/1n94tai1');
     		let responseJson = await response.json();
@@ -56,13 +53,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  button: {
-    textAlign: 'center',
-    backgroundColor: '#cccccc',
-    borderRadius: 5,
-    padding: 20,
-    overflow: 'hidden',
+
+  buttons: {
+  	flexDirection: 'row',
+  	justifyContent: 'center',
   },
+
+  button: {
+    backgroundColor: '#cccccc',
+    alignItems: 'center',
+    margin: 5,
+    padding: 10,
+    width: 80,
+  },
+
   description: {
   	marginBottom: 15,
   	color: '#444444'
