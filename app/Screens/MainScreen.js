@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Fetch, TouchableOpacity } from 'react-native';
 
-var url = 'http://requestb.in/1n94tai1';
+var url = 'https://requestb.in/1n94tai1';
 
 class MainScreen extends Component {
     constructor(props){
