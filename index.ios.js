@@ -52,6 +52,7 @@ class RestTesting extends Component {
     async _onPressButtonGET(){
         try{
             let response = await fetch(url);
+            //these will be uncommented if the website actually returned anything
             //let responseJson = await response.json();
             //return responseJson;
         } catch (error) {
