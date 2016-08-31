@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Fetch, TouchableOpacity } from 'react-native';
 
-var url = 'https://requestb.in/1n94tai1';
+var url = 'https://dbtest-9e865.firebaseio.com/test/blah';
 
 class MainScreen extends Component {
     constructor(props){
         super(props);
         this.state ={
             action: 'none',
+            got: 'nothing done yet',
         };
     }
 
@@ -27,8 +28,9 @@ class MainScreen extends Component {
                     </TouchableOpacity>
                 </View>
                 <Text> {this.state.action} </Text>
+                <Text> {this.state.got} </Text>
                 <View style={styles.bottomButton}>
-                    <Text style={{color: 'white'}}> {`current URL: ${url}`} </Text>
+                    <Text style={{color: 'white'}}> {'current URL: ' + url} </Text>
                 </View>
             </View>     
         );
@@ -50,15 +52,22 @@ class MainScreen extends Component {
     }
 
     async _onPressButtonGET(){
-      try{
-         let response = await fetch(url);
-         //let responseJson = await response.json();
-         //return responseJson;
-      } catch (error) {
-         console.error(error);
-      }
-        this.setState({action: 'GET sent!'});
-    } 
+        try{
+            fetch(url).then(response => {
+                setTimeout(() => null, 0);
+                return response.json
+            }
+            let response = await fetch(url);
+            console.log(response.json());
+            //let responseJson = await response.json();
+            //return responseJson.bleh;
+            let responseJson = await response.json();
+            return (responseJson);
+        } catch (error) {
+            console.error(error);        
+        }
+        //let responseJson = await response.json();
+    }
 }
 
 const styles = StyleSheet.create({

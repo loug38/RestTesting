@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "134913384853",
+    "firebase_url": "https://dbtest-9e865.firebaseio.com",
+    "project_id": "dbtest-9e865",
+    "storage_bucket": "dbtest-9e865.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134913384853:android:e7c9552956bbb0ec",
+        "android_client_info": {
+          "package_name": "com.resttesting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134913384853-s5t1msbdsp99baame6u2760ro55kub68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfowfH1vJK_xzP9J2W17jyAat5NWA7RVc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
