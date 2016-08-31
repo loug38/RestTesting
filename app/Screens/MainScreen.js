@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Fetch, TouchableOpacity } from 'react-native';
 
-var url = 'https://dbtest-9e865.firebaseio.com/test/blah';
+var url = 'https://dbtest-9e865.firebaseio.com/test.json';
 
 class MainScreen extends Component {
     constructor(props){
         super(props);
         this.state ={
             action: 'none',
-            got: 'nothing done yet',
+            got: 'nothing',
+            data: 'no data yet',
         };
     }
 
@@ -24,11 +25,12 @@ class MainScreen extends Component {
                         <Text> Post </Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonGET()}>
-                        <Text> Get </Text>
+                        <Text> GET</Text>
                     </TouchableOpacity>
                 </View>
                 <Text> {this.state.action} </Text>
                 <Text> {this.state.got} </Text>
+                <Text> {this.state.data} </Text>
                 <View style={styles.bottomButton}>
                     <Text style={{color: 'white'}}> {'current URL: ' + url} </Text>
                 </View>
@@ -52,21 +54,14 @@ class MainScreen extends Component {
     }
 
     async _onPressButtonGET(){
-        try{
-            fetch(url).then(response => {
-                setTimeout(() => null, 0);
-                return response.json
-            }
+        try {
             let response = await fetch(url);
-            console.log(response.json());
-            //let responseJson = await response.json();
-            //return responseJson.bleh;
             let responseJson = await response.json();
-            return (responseJson);
+            this.setState({data: responseJson.blah});
+            return responseJson.bleh;
         } catch (error) {
             console.error(error);        
         }
-        //let responseJson = await response.json();
     }
 }
 
