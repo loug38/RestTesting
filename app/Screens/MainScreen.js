@@ -22,7 +22,7 @@ class MainScreen extends Component {
       // there are two parts of notif. notif.notification contains the notification payload, notif.data contains data payload
     });
     this.refreshUnsubscribe = FCM.on('refreshToken', (token) => {
-      /onsole.log(token);
+      console.log(token);
       // fcm token may not be available on first load, catch it here
     });
 
@@ -31,7 +31,7 @@ class MainScreen extends Component {
   }
 
   componentWillUnmount() {
-    prevent leaking
+    // prevent leaking
     this.refreshUnsubscribe();
     this.notificationUnsubscribe()
   }
