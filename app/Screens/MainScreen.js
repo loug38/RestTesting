@@ -1,68 +1,96 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Fetch, TouchableOpacity } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Fetch, TouchableOpacity, DeviceEventEmitter } from 'react-native';
+import FCM from 'react-native-fcm';
 
 var url = 'https://dbtest-9e865.firebaseio.com/test.json';
 
 class MainScreen extends Component {
-    constructor(props){
-        super(props);
-        this.state ={
-            action: 'none',
-            got: 'nothing',
-            data: 'no data yet',
-        };
-    }
+  constructor(props){
+    super(props);
+    this.state ={
+      action: 'none',
+      got: 'nothing',
+      data: 'no data yet',
+    };
+  }
 
-    render(){
-        return(
-            <View style={styles.container}>
-                <Text style={styles.title}> Fetcher </Text>
-                <Text style={styles.description}>
-                    Try GET or POST from/to RequestBin
-                </Text>
-                <View style={styles.buttons}>
-                    <TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonPOST()}>
-                        <Text> Post </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonGET()}>
-                        <Text> GET</Text>
-                    </TouchableOpacity>
-                </View>
-                <Text> {this.state.action} </Text>
-                <Text> {this.state.got} </Text>
-                <Text> {this.state.data} </Text>
-                <View style={styles.bottomButton}>
-                    <Text style={{color: 'white'}}> {'current URL: ' + url} </Text>
-                </View>
-            </View>     
-        );
-    }
+  componentDidMount(){
+    FCM.getFCMToken().then(token => {
+      console.log(token); //this would normally be stored on our server
+    });
+    this.notificationUnsubscribe = FCM.on('notification', (notif) => {
+      // there are two parts of notif. notif.notification contains the notification payload, notif.data contains data payload
+    });
+    this.refreshUnsubscribe = FCM.on('refreshToken', (token) => {
+      /onsole.log(token);
+      // fcm token may not be available on first load, catch it here
+    });
 
-    _onPressButtonPOST(){
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                firstParam: 'testerino',
-                secondParam: 'testing',
-            }),
-        });
-        this.setState({action: 'POST sent!'});
-    }
+    FCM.subscribeToTopic('/topics/test');
+    FCM.unsubscribeFromTopic('/topics/test');
+  }
 
-    async _onPressButtonGET(){
-        try {
-            let response = await fetch(url);
-            let responseJson = await response.json();
-            this.setState({data: responseJson.blah});
-            return responseJson.bleh;
-        } catch (error) {
-            console.error(error);        
-        }
+  componentWillUnmount() {
+    prevent leaking
+    this.refreshUnsubscribe();
+    this.notificationUnsubscribe()
+  }
+
+  render(){
+    return(
+      <View style={styles.container}>
+        <Text style={styles.title}> Fetcher </Text>
+        <Text style={styles.description}>
+          Try GET or POST rrfrom/to Firebase via REST API
+        </Text>
+        <Text style={styles.description}>
+          {'Current url: ' + url}
+        </Text>
+        <View style={styles.buttons}>
+          <TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonPOST()}>
+            <Text> POST </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonGET()}>
+            <Text> GET</Text>
+          </TouchableOpacity>
+        </View>
+        <Text style={{color: 'black'}}> {`Data from Get: ${this.state.data}`}</Text>
+        <TouchableOpacity style={styles.bottomButton} onPress={(event) => this._onPressGetNotification()}>
+          <Text style={{color: 'white'}}> Push for a notification </Text>
+        </TouchableOpacity>
+      </View>     
+    );
+  }
+
+  _onPressButtonPOST(){
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstParam: 'testerino',
+        secondParam: 'testing',
+      }),
+    });
+    this.setState({action: 'POST sent!'});
+  }
+
+  async _onPressButtonGET(){
+    try {
+      let response = await fetch(url);
+      let responseJson = await response.json();
+      this.setState({data: responseJson.blah});
+      return responseJson.bleh;
+    } catch (error) {
+      console.error(error);        
     }
+  }
+
+  _onPressGetNotification(){
+
+  }
 }
 
 const styles = StyleSheet.create({
@@ -76,6 +104,7 @@ const styles = StyleSheet.create({
   buttons: {
    flexDirection: 'row',
    justifyContent: 'center',
+   paddingTop: 50
   },
 
   button: {
@@ -105,7 +134,7 @@ const styles = StyleSheet.create({
   title: {
    fontSize: 25,
    color: '#444444',
-   paddingBottom: 150,
+   paddingBottom: 50,
   }
 });
 
