@@ -66,7 +66,7 @@ class MainScreen extends Component {
              'height': 100,
              'alignItems': 'stretch',
              'elevation': 1,
-             'borderTopWidth': 1,
+             'borderTopWidth': (rowID == 0 ? 0 : 1),
              'borderColor': 'white',
             }
         ];
@@ -86,7 +86,6 @@ class MainScreen extends Component {
     }
 
     render(){
-        let a = fdif;
         return(
             <View style={styles.container}>
                 <View style={styles.imgWrapper}>
@@ -100,6 +99,7 @@ class MainScreen extends Component {
                     <TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonPOST()}>
                         <Text style={{color: 'white'}}> POST </Text>
                     </TouchableOpacity>
+                    <View style={{borderRightWidth: 1, borderColor: '#dddddd', margin: 5, width: 0}} />
                     <TouchableOpacity style={styles.button} onPress={(event) => this._onPressButtonGET()}>
                         <Text style={{color: 'white'}}> GET</Text>
                     </TouchableOpacity>
@@ -117,6 +117,7 @@ class MainScreen extends Component {
             },
             body: JSON.stringify({
                 ClaimsExaminer: 'testerino',
+                name: 'Something',
             }),
         });
         this.setState({action: 'POST sent!'});
@@ -170,9 +171,10 @@ const styles = StyleSheet.create({
 
     button: {
         alignItems: 'center',
-        margin: 5,
-        padding: 10,
-        width: 80,
+        paddingTop: 15,
+        paddingBottom: 15,
+        marginRight: 70,
+        marginLeft: 70,
     },
 
     bottomButton: {
