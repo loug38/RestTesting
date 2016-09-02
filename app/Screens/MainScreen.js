@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Fetch, TouchableOpacity, DeviceEventEmitter, ListView, Image } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Fetch, TouchableOpacity, TouchableNativeFeedback, DeviceEventEmitter, ListView, Image } from 'react-native';
 import FCM from 'react-native-fcm';
+import BlurView from 'react-native-blur';
 
 var url = 'https://dbtest-9e865.firebaseio.com/contacts.json';
 var f1 = 0x111111ff;
@@ -71,18 +72,21 @@ class MainScreen extends Component {
         ];
 
         return( 
-            <View style={style}> 
-                <Text style={{paddingLeft: 5, color: 'white', fontSize: 20}}>
-                    {feedRow.contactRole}
-                </Text>
-                <Text style={{paddingLeft: 5, color: 'white'}}>
-                    {feedRow.name}
-                </Text>
-            </View> 
+            <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple('white')} delayPressIn={0}>
+                <View style={style}>
+                        <Text style={{paddingLeft: 5, color: 'white', fontSize: 20}}>
+                            {feedRow.contactRole}
+                        </Text>
+                        <Text style={{paddingLeft: 5, color: 'white'}}>
+                            {feedRow.name}
+                        </Text>
+                </View> 
+            </TouchableNativeFeedback>
         );
     }
 
     render(){
+        let a = fdif;
         return(
             <View style={styles.container}>
                 <View style={styles.imgWrapper}>
@@ -161,6 +165,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         backgroundColor: '#007fcf',
+        elevation: 5,
     },
 
     button: {
